@@ -6,7 +6,7 @@ def logo():
         print("            /  \ \n")
 def interface():
 	logo()
-	print("PAX Generator - Simple Password List Generation Tool v0.2")
+	print("PAX Generator - Simple Password List Generation Tool v0.3")
 	print("Michael Constantine Dimpoulos // Thessaloniki, Greece // 2017\n\n")
 	print("This tool creates a dictionary / wordlist with simple passwords based on the information that you have.")
 	print("Later the wordlist can be used to crack down the victim's password. (With another piece of software)")
