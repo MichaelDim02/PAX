@@ -1,6 +1,12 @@
 #PYTHON#
+def logo():
+        print("\n   __   __  \  / ")
+        print("  |__| |__|  \\/ ")
+        print("  |    |  |  /\\ ")
+        print("            /  \ \n")
 def interface():
-	print("PAX Generator - Simple Password List Generation Tool v0.1")
+	logo()
+	print("PAX Generator - Simple Password List Generation Tool v0.2")
 	print("Michael Constantine Dimpoulos // Thessaloniki, Greece // 2017\n\n")
 	print("This tool creates a dictionary / wordlist with simple passwords based on the information that you have.")
 	print("Later the wordlist can be used to crack down the victim's password. (With another piece of software)")
@@ -21,7 +27,9 @@ def InfoCol():
 	limit = int(limit)
 	generator(name,last_name,birthday,year,number1,kw_list, limit)
 def generator(name,last_name,birthday,year,number1,kw_list, limit):
+	#OPENING THE FILE#
 	f = open(str(name) ,'w+')
+	#GENERATOR#
 	f.write(str(name) + "\n")
 	f.write(str(last_name) + "\n")
 	name_sur = name + last_name + "\n"
@@ -47,8 +55,11 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 		f.write(str(name_sur_num))
 	f.write(str(name_sur))
 	for item in kw_list:
+		f.write(item + last_name + "\n")
+		f.write(item + name + "\n")
+	for item in kw_list:
         	f.write(item + "\n")
-		if birthday != "":	
+		if birthday != "":
 			f.write(item + birthday + "\n")
 		if year != "":
 			f.write(item + year + "\n")
@@ -73,5 +84,41 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 			f.write(item + str(num) + "\n")
 			num = num + 1
 	num = 0
-	print("[+] Passwords exported at " + name + ".txt")
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + last_name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + last_name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	if len(kw_list) > 0:
+        	for item in kw_list:
+        	        for item_ in kw_list:
+        	                f.write(item + item_ + "\n")
+        	                num += 1
+        	num = 0
+        	for item in kw_list:
+        	        for item_ in kw_list:
+        	                f.write(item + item_ + str(num) + "\n")
+                	        num += 1
+        	num = 0
+        	for item in kw_list:
+        	        for item_ in kw_list:
+        	                f.write(item_ + item + "\n")
+        	                num += 1
+        	num = 0
+        	for item in kw_list:
+        	        for item_ in kw_list:
+        	                f.write(item_ + item + str(num) + "\n")
+        	                num += 1
+        	num = 0
+	print("[+] Passwords exported at " + name)
 interface()
