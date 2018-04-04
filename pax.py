@@ -34,7 +34,8 @@ def interface():
 	print("This tool is not meant to create every possible password, but instead a small list of the most likely ones.\n")
 	print("Passwords will be exported into a txt file with filename the name of the victim. If there already is a file with that name. it will get replaced")
 	print("If the field is not required you can hit space to skip it. However, if it is required (There is a [r]) then it cannot be left blank\n")
-	print("It is advisable to write only in lower case, since most passwords do not contain capital letters. Ctrl+C to exit.\n\n")
+	print("It is advisable to write only in lower case, since most passwords do not contain capital letters. Ctrl+C to exit.")
+	print("Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U\n\n")
 	InfoCol()
 def InfoCol():
 	name = raw_input("[?] [r] Name: ")
