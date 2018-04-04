@@ -1,4 +1,8 @@
-#PYTHON#
+# PAX
+# Password generator / profiler
+# By Michael Constantine Dimopoulos - Thessaloniki Greece
+# Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
+#
 def logo():
 	print("   __")
    	print("   \ \      __________")
