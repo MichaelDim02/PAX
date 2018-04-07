@@ -113,11 +113,6 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 	num = 0
 	for item in kw_list:
 		while (num <= limit):
-			f.write(item + last_name + str(num) + "\n")
-			num = num + 1
-	num = 0
-	for item in kw_list:
-		while (num <= limit):
 			f.write(item + name + str(num) + "\n")
 			num = num + 1
 	num = 0
