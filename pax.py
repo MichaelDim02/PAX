@@ -4,30 +4,23 @@
 # Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
 #
 def logo():
-	print("   __")
-   	print("   \ \      __________")
-	print("    \ \    |  ______  |")
-	print("     \ \   | |   _  | |")
-	print("      \ \  | |__/_/_| |")
-	print("       \ \ |  ________|")
-	print("        \ \| |/ / ")
-	print("         \ ' ' / ")
-	print("          \   /  ")
-	print("          /. .\ ")
-	print("         / | | \ ")
-	print("        / /| |\ \ ")
-	print("       / / | | \ \ ")
-	print("      /_/  | |  \ \ ")
-	print("           |_|   \ \ ")
-	print("                  \ \ ")
-	print("                   \_\ ")
-        print("\n       __   __  \  / ")
-        print("      |__| |__|  \\/ ")
-        print("      |    |  |  /\\ ")
-        print("                /  \ \n")
+	print("PAX v0.4              ")
+        print("By Michael Constantine Dimopoulos\n")
 def interface():
 	logo()
-	print("PAX Generator - Simple Password List Generation Tool v0.3")
+	print("		1. Start")
+	print("		2. Info")
+	print("		3. Exit")
+	opt = raw_input(">>")
+	if opt == "1":
+		InfoCol()
+	elif opt == "2":
+		about()
+	elif opt == "3":
+		exit(0)
+def about():
+	logo()
+	print("PAX Generator 0.4 - Simple Password List Generation Tool v0.4")
 	print("Michael Constantine Dimpoulos // Thessaloniki, Greece // 2017\n\n")
 	print("This tool creates a dictionary / wordlist with simple passwords based on the information that you have.")
 	print("Later the wordlist can be used to crack down the victim's password. (With another piece of software)")
@@ -36,7 +29,6 @@ def interface():
 	print("If the field is not required you can hit space to skip it. However, if it is required (There is a [r]) then it cannot be left blank\n")
 	print("It is advisable to write only in lower case, since most passwords do not contain capital letters. Ctrl+C to exit.")
 	print("Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U\n\n")
-	InfoCol()
 def InfoCol():
 	name = raw_input("[?] [r] Name: ")
 	last_name = raw_input("[?] [r] Last name: ")
@@ -119,23 +111,10 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 	if len(kw_list) > 0:
         	for item in kw_list:
         	        for item_ in kw_list:
-        	                f.write(item + item_ + "\n")
-        	                num += 1
-        	num = 0
-        	for item in kw_list:
-        	        for item_ in kw_list:
-        	                f.write(item + item_ + str(num) + "\n")
-                	        num += 1
-        	num = 0
-        	for item in kw_list:
-        	        for item_ in kw_list:
-        	                f.write(item_ + item + "\n")
-        	                num += 1
-        	num = 0
-        	for item in kw_list:
-        	        for item_ in kw_list:
-        	                f.write(item_ + item + str(num) + "\n")
-        	                num += 1
-        	num = 0
+				f.write(item + item_ + "\n")
+				while (num <= limit):
+        	                	f.write(item + item_ + str(num) + "\n")
+        	                	num += 1
+        			num = 0
 	print("[+] Passwords exported at " + name)
 interface()
