@@ -3,23 +3,15 @@
 # By Michael Constantine Dimopoulos - Thessaloniki Greece
 # Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
 #
+
+import argparse
+
 def logo():
 	print("PAX v0.4              ")
-        print("By Michael Constantine Dimopoulos\n")
+        print("By Michael C. Dim.")
 def interface():
-	logo()
-	print("		1. Start")
-	print("		2. Info")
-	print("		3. Exit")
-	opt = raw_input(">>")
-	if opt == "1":
-		InfoCol()
-	elif opt == "2":
-		about()
-	elif opt == "3":
-		exit(0)
+	print("-s Start   -i Info")
 def about():
-	logo()
 	print("PAX Generator 0.4 - Simple Password List Generation Tool v0.4")
 	print("Michael Constantine Dimpoulos // Thessaloniki, Greece // 2017\n\n")
 	print("This tool creates a dictionary / wordlist with simple passwords based on the information that you have.")
@@ -27,7 +19,7 @@ def about():
 	print("This tool is not meant to create every possible password, but instead a small list of the most likely ones.\n")
 	print("Passwords will be exported into a txt file with filename the name of the victim. If there already is a file with that name. it will get replaced")
 	print("If the field is not required you can hit space to skip it. However, if it is required (There is a [r]) then it cannot be left blank\n")
-	print("It is advisable to write only in lower case, since most passwords do not contain capital letters. Ctrl+C to exit.")
+	print("It is reocmmened that you write only in lower case, since most passwords do not contain capital letters. Ctrl+C to exit.")
 	print("Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U\n\n")
 def InfoCol():
 	name = raw_input("[?] [r] Name: ")
@@ -117,4 +109,13 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
         	                	num += 1
         			num = 0
 	print("[+] Passwords exported at " + name)
-interface()
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", help="Start", action="store_true")
+parser.add_argument("-i", help="Info", action="store_true")
+logo()
+if parser.parse_args().s:
+	InfoCol()
+elif parser.parse_args().i:
+	about()
+else:
+	interface()
