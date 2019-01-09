@@ -1,0 +1,12 @@
+So you want to hack an account on a website that has a limit to the minimum number of characters of a password, but your 
+dictionary is filled with small words that cannot be a password on that site? Do you want to know how to rid your wordlist
+of small words? Try the ruby command below:
+
+
+
+ruby -ne 'puts $_ if $_.chomp.length() >= 10 ' < wordlist.txt
+
+
+
+Replace the 10 with the minimum number of characters, and the wordlist.txt with the name of your dictionary and you are good to go!
+~~~~ Michael Constantine Dimopoulos ~~~~
