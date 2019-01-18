@@ -3,6 +3,7 @@
 # By Michael Constantine Dimopoulos - Thessaloniki Greece
 # Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
 #
+# Good wordlist: www.wpwhitesecurity.com/downloads/wpw_pwd_dictionary.zip
 
 import argparse
 
