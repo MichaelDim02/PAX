@@ -1,4 +1,4 @@
-# PAX
+# PAX v0.5
 # Password generator / profiler
 # By Michael Constantine Dimopoulos - Thessaloniki Greece
 # Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
@@ -7,7 +7,7 @@
 import argparse
 
 def logo():
-	print("PAX v0.4              ")
+	print("PAX v0.5              ")
         print("By Michael C. Dim.")
 def interface():
 	print("-s Start   -i Info")
@@ -45,6 +45,18 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 		name_sur_bday = name + last_name + birthday + "\n"
 		f.write(str(name_birthday))
 		f.write(str(name_sur_bday))
+		name_birthday_with_dot = name + "." + birthday	+ "\n"
+		name_sur_bday_with_dot = name + "." + last_name + birthday + "\n"
+		f.write(str(name_birthday_with_dot))
+		f.write(str(name_sur_bday_with_dot))
+		name_birthday_with_us = name + "_" + birthday	+ "\n"
+		name_sur_bday_with_us = name + "_" + last_name + birthday + "\n"
+		f.write(str(name_birthday_with_us))
+		f.write(str(name_sur_bday_with_us))
+		name_birthday_with_dash = name + "-" + birthday	+ "\n"
+		name_sur_bday_with_dash = name + "-" + last_name + birthday + "\n"
+		f.write(str(name_birthday_with_dash))
+		f.write(str(name_sur_bday_with_dash))
 	if year != "":
 		name_sur_year = name + last_name + year + "\n"
 		sur_year = last_name + year + "\n"
@@ -54,15 +66,62 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 		f.write(str(name_sur_year))
 		f.write(str(name_year))
 		f.write(str(sur_year))
+		name_sur_year_dot_1 = name + "." + last_name + year + "\n"
+		name_sur_year_dot_2 = name + last_name + "." + year + "\n"
+		name_sur_year_dot_3 = name + "." + last_name + "." + year + "\n"
+		name_sur_year_us_1 = name + "_" + last_name + year + "\n"
+		name_sur_year_us_2 = name + last_name + "_" + year + "\n"
+		name_sur_year_us_3 = name + "_" + last_name + "_" + year + "\n"
+		name_sur_year_dash_1 = name + "-" + last_name + year + "\n"
+		name_sur_year_dash_2 = name + last_name + "-" + year + "\n"
+		name_sur_year_dash_3 = name + "-" + last_name + "-" + year + "\n"
+		f.write(str(name_sur_year_dot_1))
+		f.write(str(name_sur_year_dot_2))
+		f.write(str(name_sur_year_dot_3))
+		f.write(str(name_sur_year_us_1))
+		f.write(str(name_sur_year_us_2))
+		f.write(str(name_sur_year_us_3))
+		f.write(str(name_sur_year_dash_1))
+		f.write(str(name_sur_year_dash_2))
+		f.write(str(name_sur_year_dash_3))
+		sur_year = last_name + year + "\n"
+		sur_birthday = last_name + year + "\n"
 	if number1 != "":
 		f.write(str(number1) + "\n")
 		name_sur_num = name + last_name + number1 + "\n"
+		name_num = name + number1 + "\n"
+		f.write(str(name_num))
 		sur_num = last_name + number1 + "\n"
 		f.write(str(name_sur_num))
+		sur_num_dot = last_name + "." + number1 + "\n"
+		sur_num_us = last_name + "_" + number1 + "\n"
+		sur_num_dash = last_name + "-" + number1 + "\n"
+		name_num_dot = name + "." + number1 + "\n"
+		name_num_us = name + "_" + number1 + "\n"
+		name_num_dash = name + "-" + number1 + "\n"
+		f.write(str(name_sur_num))
+		f.write(str(name_num_dot))
+		f.write(str(name_num_us))
+		f.write(str(name_num_dash))
 	f.write(str(name_sur))
 	for item in kw_list:
 		f.write(item + last_name + "\n")
 		f.write(item + name + "\n")
+		f.write(name + item + "\n")
+		f.write(last_name + item + "\n")
+		f.write(item + "." + last_name + "\n")
+		f.write(item + "_" + last_name + "\n")
+		f.write(item + "-" + last_name + "\n")
+		f.write(item + "." + name + "\n")
+		f.write(item + "_" + name + "\n")
+		f.write(item + "-" + name + "\n")
+
+		f.write(name + "." + item + "\n")
+		f.write(name + "_" + item + "\n")
+		f.write(name + "-" + item + "\n")
+		f.write(last_name + "." + item + "\n")
+		f.write(last_name + "_" + item + "\n")
+		f.write(last_name + "-" + item + "\n")
 	for item in kw_list:
         	f.write(item + "\n")
 		if birthday != "":
@@ -106,6 +165,168 @@ def generator(name,last_name,birthday,year,number1,kw_list, limit):
 				f.write(item + item_ + "\n")
 				while (num <= limit):
         	                	f.write(item + item_ + str(num) + "\n")
+        	                	num += 1
+        			num = 0
+
+# WITH DOTS
+
+	for item in kw_list:
+        	f.write(item + "\n")
+		if birthday != "":
+			f.write(item + "." + birthday + "\n")
+		if year != "":
+			f.write(item + "." + year + "\n")
+	num = 0
+	for item in kw_list:
+		if number1 != "":
+			f.write(item + "." + number1 + "\n")
+		if year != "":
+			f.write(item + "." + year + "\n")
+		if birthday != "":
+			f.write(item + "." + birthday + "\n")
+	while (num <= limit):
+			f.write(name + "." + str(num) + "\n")
+			num = num + 1
+	num = 0
+	while (num <= limit):
+		f.write(last_name + "." + str(num) + "\n")
+		num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "." + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "." + last_name + str(num) + "\n")
+			f.write(item + last_name + "." + str(num) + "\n")
+			f.write(item + "." + last_name + "." + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + name + str(num) + "\n")
+			f.write(item + "." + name + "." +str(num) + "\n")
+			f.write(item + name + "." + str(num) + "\n")
+			f.write(item + "." + name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	if len(kw_list) > 0:
+        	for item in kw_list:
+        	        for item_ in kw_list:
+				f.write(item + item_ + "\n")
+				while (num <= limit):
+        	                	f.write(item + "." + item_ + "." + str(num) + "\n")
+					f.write(item + "." + item_ + str(num) + "\n")
+					f.write(item + item_ + "." + str(num) + "\n")
+        	                	num += 1
+        			num = 0
+
+# WITH DASHES 
+	for item in kw_list:
+        	f.write(item + "\n")
+		if birthday != "":
+			f.write(item + "-" + birthday + "\n")
+		if year != "":
+			f.write(item + "-" + year + "\n")
+	num = 0
+	for item in kw_list:
+		if number1 != "":
+			f.write(item + "-" + number1 + "\n")
+		if year != "":
+			f.write(item + "-" + year + "\n")
+		if birthday != "":
+			f.write(item + "-" + birthday + "\n")
+	while (num <= limit):
+			f.write(name + "-" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	while (num <= limit):
+		f.write(last_name + "-" + str(num) + "\n")
+		num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "-" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "-" + last_name + str(num) + "\n")
+			f.write(item + last_name + "-" + str(num) + "\n")
+			f.write(item + "-" + last_name + "-" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + name + str(num) + "\n")
+			f.write(item + "-" + name + "-" +str(num) + "\n")
+			f.write(item + name + "-" + str(num) + "\n")
+			f.write(item + "-" + name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	if len(kw_list) > 0:
+        	for item in kw_list:
+        	        for item_ in kw_list:
+				f.write(item + item_ + "\n")
+				while (num <= limit):
+        	                	f.write(item + "-" + item_ + "-" + str(num) + "\n")
+					f.write(item + "-" + item_ + str(num) + "\n")
+					f.write(item + item_ + "-" + str(num) + "\n")
+        	                	num += 1
+        			num = 0
+# WITH UNDERSCORES
+	for item in kw_list:
+        	f.write(item + "\n")
+		if birthday != "":
+			f.write(item + "_" + birthday + "\n")
+		if year != "":
+			f.write(item + "_" + year + "\n")
+	num = 0
+	for item in kw_list:
+		if number1 != "":
+			f.write(item + "_" + number1 + "\n")
+		if year != "":
+			f.write(item + "_" + year + "\n")
+		if birthday != "":
+			f.write(item + "_" + birthday + "\n")
+	while (num <= limit):
+			f.write(name + "_" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	while (num <= limit):
+		f.write(last_name + "_" + str(num) + "\n")
+		num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "_" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + "_" + last_name + str(num) + "\n")
+			f.write(item + last_name + "_" + str(num) + "\n")
+			f.write(item + "_" + last_name + "_" + str(num) + "\n")
+			num = num + 1
+	num = 0
+	for item in kw_list:
+		while (num <= limit):
+			f.write(item + name + str(num) + "\n")
+			f.write(item + "_" + name + "_" +str(num) + "\n")
+			f.write(item + name + "_" + str(num) + "\n")
+			f.write(item + "_" + name + str(num) + "\n")
+			num = num + 1
+	num = 0
+	if len(kw_list) > 0:
+        	for item in kw_list:
+        	        for item_ in kw_list:
+				f.write(item + item_ + "\n")
+				while (num <= limit):
+        	                	f.write(item + "_" + item_ + "_" + str(num) + "\n")
+					f.write(item + "_" + item_ + str(num) + "\n")
+					f.write(item + item_ + "_" + str(num) + "\n")
         	                	num += 1
         			num = 0
 	print("[+] Passwords exported at " + name)
