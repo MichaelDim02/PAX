@@ -1,6 +1,5 @@
 # PAX v0.6
 # Password generator / profiler
-# By Michael Constantine Dimopoulos - Thessaloniki Greece
 # Video by Fukrey Hacker's Team: https://youtu.be/1pBMvFmqm7U
 #
 # Good wordlist: www.wpwhitesecurity.com/downloads/wpw_pwd_dictionary.zip
@@ -9,12 +8,12 @@ import argparse
 
 def logo():
 	print("PAX v0.6              ")
-        print("By Michael C. Dim.")
+        print("By MichaelDim.")
 def interface():
 	print("-s Start   -i Info")
 def about():
 	print("PAX Generator 0.6 - Simple Password List Generation Tool v0.6")
-	print("Michael Constantine Dimpoulos // Thessaloniki, Greece // 2017\n\n")
+	print("MichaelDim // Greece // 2017\n\n")
 	print("This tool creates a dictionary / wordlist with simple passwords based on the information that you have.")
 	print("Later the wordlist can be used to crack down the victim's password. (With another piece of software)")
 	print("This tool is not meant to create every possible password, but instead a small list of the most likely ones.\n")
